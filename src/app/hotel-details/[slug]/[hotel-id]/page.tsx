@@ -11,16 +11,14 @@ export default async function HotelDetailsPage({
   const hotel = await fetchHotelDetails(params.hotelId);
 
   if (!hotel) {
-    throw new Error("Hotel not found!");
+    return <div>Hotel not found</div>;
   }
 
   return (
-    <div className="hotel-details">
-      <Gallery images={hotel.images} />
-      <div className="details-container">
-        <PropertyDetails hotel={hotel} />
-        <BookingCard price={hotel.price} />
-      </div>
+    <div>
+      <Gallery images={hotel.images || []} />
+      <PropertyDetails hotel={hotel} />
+      <BookingCard price={hotel.price || 0} />
     </div>
   );
 }
