@@ -1,0 +1,81 @@
+.modalShare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .modalShareContent {
+    background: white;
+    width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .modalShareHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #93bad7;
+  }
+  
+  .closeButtonShare {
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .shareModalTxt {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .modalShareBody {
+    padding: 15px;
+  }
+  
+  .modalMapContainer {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .modalShareImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+  }
+  
+  .modalLocationLabel h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .modalLocationLabel p {
+    font-size: 14px;
+    margin: 2px 0;
+  }
+  
+  .modalShareOptions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .modalShareButton, .modalCopyLinkButton {
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .modalShareButton:hover, .modalCopyLinkButton:hover {
+    color: #0056b3;
+  }
+  
