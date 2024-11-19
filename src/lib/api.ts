@@ -3,6 +3,6 @@ export async function fetchHotelDetails(hotelId: string) {
   if (!response.ok) {
     throw new Error("Failed to fetch hotel details");
   }
-  const { data } = await response.json(); // Extract data from the response
+  const { data } = await response.json(); // Ensure backend sends data under `data` field
   return data.hotel; // Return the hotel object
 }

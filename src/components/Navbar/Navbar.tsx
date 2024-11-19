@@ -1,14 +1,18 @@
 import styles from "./Navbar.module.css";
-import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logo}>Hotel Booking</div>
+    <nav className={styles.Navbar}>
+      <div className={styles.logo}>
+        🌐
+      </div>
       <ul className={styles.navLinks}>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>United States</li>
+        <li>Trip Boards</li>
+        <li>List your property</li>
+        <li>Help</li>
+        <li>My trips</li>
+        <li>Sign in</li>
       </ul>
     </nav>
   );
