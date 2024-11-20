@@ -10,6 +10,70 @@
         </ul>
     </div>
     <div class="section">
+        <h2>Front-end Folder Structure</h2>
+        <p>The Fron-end is organized as follows:</p>
+        <pre>
+            src/
+├── app/                           # App Router Pages
+│   ├── hotel-details/             # Main Hotel Details Route
+│   │   ├── [slug]/                # Dynamic Slug Route
+│   │   │   ├── [hotel-id]/        # Dynamic Hotel ID Route
+│   │   │   │   ├── page.tsx       # Dynamic Page Component for Hotel Details
+│   │   │   │   └── head.tsx       # Head Component for Meta/SEO
+│   │   │   └── layout.tsx         # Nested Layout (Optional, e.g., for slug-specific UI)
+│   │   └── layout.tsx             # Root Layout for Hotel Details Section
+│   ├── error.tsx                  # Custom Error Page
+│   ├── not-found.tsx              # Custom 404 Page
+│   ├── layout.tsx                 # Root Layout for Entire App
+│   └── globals.css                # Global Styles
+│
+├── components/                    # Reusable React Components
+│   ├── Navbar/                    # Navbar Component
+│   │   ├── Navbar.tsx             # React Component
+│   │   └── Navbar.module.css      # Scoped Styles for Navbar
+│   ├── Gallery/                   # Gallery Component
+│   │   ├── Gallery.tsx            # React Component
+│   │   └── Gallery.module.css     # Scoped Styles for Gallery
+│   ├── PropertyDetails/           # Property Details Component
+│   │   ├── PropertyDetails.tsx    # React Component
+│   │   └── PropertyDetails.module.css # Scoped Styles
+│   ├── Amenities/                 # Amenities Component
+│   │   ├── Amenities.tsx          # React Component
+│   │   └── Amenities.module.css   # Scoped Styles
+│   ├── BookingCard/               # Booking Card Component
+│   │   ├── BookingCard.tsx        # React Component
+│   │   └── BookingCard.module.css # Scoped Styles
+│   └── Modals/                    # Modal Components
+│       ├── ShareModal.tsx         # Share Modal Component
+│       ├── SettingsModal.tsx      # Settings Modal Component
+│       └── Modals.module.css      # Scoped Styles
+│
+├── lib/                           # Utility Functions
+│   ├── api.ts                     # API Utilities (fetch logic)
+│   └── helpers.ts                 # General Helper Functions
+│
+├── styles/                        # Global and Common Styles
+│   ├── variables.module.css       # CSS Variables
+│   └── mixins.module.css          # CSS Mixins
+│
+├── types/                         # TypeScript Types
+│   └── hotel.ts                   # Hotel Data Types
+│
+├── public/                        # Public Assets
+│   └── images/                    # Image Asset
+│
+├── tests/                         # Unit and Integration Tests
+│   └── components/                # Component Test
+│
+├── .eslintrc.json                 # ESLint Configuration
+├── .gitignore                     # Git Ignore File
+├── jest.config.js                 # Jest Configuration
+├── next.config.js                 # Next.js Configuration
+├── package.json                   # Dependencies
+├── README.md                      # Project Documentation
+├── tsconfig.json                  # TypeScript Configuration
+└── yarn.lock                      # Yarn Lock File
+        </pre>
         <h2>1. API Instructions</h2>
         <h3>1.1 Installation</h3>
         <pre>
