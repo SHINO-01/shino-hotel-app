@@ -91,7 +91,7 @@ npm test
             <li>If tests fail, ensure all dependencies are installed and the server is running.</li>
             <li>Check console logs for detailed error messages.</li>
             <li>Verify network requests in the browser developer tools for frontend API calls.</li>
-            <li>Make sure there are test hotel Record in the API and the Front end is requesting that hotel record through http//:</li>
+            <li>Make sure there are test hotel Record in the API and the Front end is requesting that hotel record through http://localhost:3000/api/hotel/KWF755</li>
         </ul>
     </div>
 </body>
