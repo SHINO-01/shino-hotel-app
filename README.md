@@ -13,7 +13,7 @@
         <h2>Front-end Folder Structure</h2>
         <p>The Fron-end is organized as follows:</p>
         <pre>
-            src/
+src/
 ├── app/                           # App Router Pages
 │   ├── hotel-details/             # Main Hotel Details Route
 │   │   ├── [slug]/                # Dynamic Slug Route
