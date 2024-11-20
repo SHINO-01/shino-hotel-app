@@ -1,24 +1,32 @@
-import { fetchHotelDetails } from "@/lib/api";
-import Gallery from "@/components/Gallery/Gallery";
-import PropertyDetails from "@/components/PropertyDetails/PropertyDetails";
-import BookingCard from "@/components/BookingCard/BookingCard";
+// src/app/hotel-details/[slug]/[hotelId]/page.tsx
 
-export default async function HotelDetailsPage({
-  params,
-}: {
-  params: { slug: string; hotelId: string };
-}) {
-  const hotel = await fetchHotelDetails(params.hotelId);
+import React from 'react';
+import { Hotel } from '@/types/hotel';
+import { fetchHotelData } from '@/utils/api';
+import HotelDetails from './HotelDetails';
+
+interface HotelPageProps {
+  params: {
+    hotelId: string;
+    slug: string;
+  };
+}
+
+const HotelPage = async ({ params }: HotelPageProps) => {
+  const { hotelId } = params;
+
+  const hotel = await fetchHotelData(hotelId);
 
   if (!hotel) {
-    return <div>Hotel not found</div>;
+    return (
+      <main>
+        <h1>Hotel Not Found</h1>
+        <p>The hotel data could not be retrieved.</p>
+      </main>
+    );
   }
 
-  return (
-    <div>
-      <Gallery images={hotel.images || []} />
-      <PropertyDetails hotel={hotel} />
-      <BookingCard price={hotel.price || 0} />
-    </div>
-  );
-}
+  return <HotelDetails hotel={hotel} />;
+};
+
+export default HotelPage;

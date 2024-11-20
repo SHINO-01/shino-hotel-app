@@ -1,0 +1,54 @@
+/* src/components/Gallery.module.css */
+
+.gallery {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .mainImage {
+    position: relative;
+  }
+  
+  .mainImage img {
+    width: 100%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .smallImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .smallImages img {
+    width: 100%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+    .smallImages {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  

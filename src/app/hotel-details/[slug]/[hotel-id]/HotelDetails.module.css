@@ -1,0 +1,17 @@
+/* src/app/hotel-details/[slug]/[hotelId]/HotelDetails.module.css */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .section {
+    margin-top: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  

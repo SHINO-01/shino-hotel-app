@@ -1,28 +1,41 @@
-import Gallery from "@/components/Gallery/Gallery";
-import { fetchHotelDetails } from "@/lib/api";
+// src/app/page.tsx
 
-export default async function HomePage() {
-  // Dynamic hotel ID for fetching data
-  const hotelId = "KWF755";
+import React from 'react';
+import { Hotel } from '@/types/hotel';
+import { fetchHotelData } from '@/utils/api';
+import Link from 'next/link';
+import styles from './page.module.css';
 
-  try {
-    // Fetch hotel details dynamically
-    const hotel = await fetchHotelDetails(hotelId);
+const HomePage = async () => {
+  const hotelId = 'STF840'; // Replace with the hotel ID you want to display
+  const hotel = await fetchHotelData(hotelId);
 
-    // Destructure images for easy passing to the Gallery component
-    const { images: hotelImages, rooms } = hotel;
-
-    // Extract room images
-    const roomImages = rooms.flatMap((room: any) => room.roomImage);
-
+  if (!hotel) {
     return (
-      <div>
-        <h1>{hotel.title}</h1>
-        <Gallery hotelImages={hotelImages} roomImages={roomImages} />
-      </div>
+      <main className={styles.main}>
+        <h1>Hotel Not Found</h1>
+        <p>The hotel data could not be retrieved.</p>
+      </main>
     );
-  } catch (error) {
-    console.error("Error loading hotel data:", error);
-    return <div>Error loading hotel data.</div>;
   }
-}
+
+  return (
+    <main className={styles.main}>
+      <h1>{hotel.title}</h1>
+      <div className={styles.hotelItem}>
+        <img src={hotel.images[0]} alt={hotel.title} className={styles.hotelImage} />
+        <div className={styles.hotelInfo}>
+          <p>{hotel.description}</p>
+          <Link
+            href={`/hotel-details/${hotel.slug}/${hotel.hotelID}`}
+            className={styles.viewDetailsButton}
+          >
+            View Details
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default HomePage;
